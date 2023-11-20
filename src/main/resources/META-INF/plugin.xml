@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+   <id>com.mena97villalobos.ViewModelFactoryCreator</id>
+
+    <!--  TODO 4: Nombre público del plugin  -->
+    <name>ViewModelFactoryCreator</name>
+
+    <!-- TODO 5: Información del creador del plugin, se muestra en el Market Place -->
+    <vendor email="mena97villalobos@gmail.com" url="https://www.yourcompany.com">Mena97Villalobos</vendor>
+
+    <!--  TODO 6: Breve descripción del plugin puede contener elementos HTML se muestra en el market place  -->
+    <description>Demo Plugin for GDG Developers Fest Costa Rica 2023</description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <!--  TODO 7: Añadimos esta dependencia para poder utilizar el PSI de kotlin -->
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij"/>
+
+ <!--  TODO 12: Añadir una action al toolbar del IDE -->
+ <actions>
+  <group
+          id="Version Catalog Migrator"
+          description="Version Catalog Migrator">
+   <!--  TODO 13: Detalles del action que estamos añadiendo al toolbar -->
+   <action
+           id="com.mena97villalobos.versioncatalogmigrator.MigratorAction"
+           class="com.mena97villalobos.viewmodelfactorycreator.MigratorAction"
+           text="Version Catalog Migrator"
+           description="Version Catalog Migrator"/>
+   <!--  TODO 14: Donde vamos a ubicar el action https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action__add-to-group -->
+   <add-to-group group-id="ToolsMenu" anchor="first"/>
+  </group>
+ </actions>
+</idea-plugin>
