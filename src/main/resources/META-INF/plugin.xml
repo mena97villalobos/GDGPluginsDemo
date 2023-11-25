@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-   <id>com.mena97villalobos.ViewModelFactoryCreator</id>
+    <id>com.mena97villalobos.ViewModelFactoryCreator</id>
 
     <!--  TODO 4: Nombre público del plugin  -->
     <name>ViewModelFactoryCreator</name>
@@ -16,21 +16,26 @@
     <!--  TODO 7: Añadimos esta dependencia para poder utilizar el PSI de kotlin -->
     <depends>org.jetbrains.kotlin</depends>
 
-    <extensions defaultExtensionNs="com.intellij"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <intentionAction>
+            <className>com.mena97villalobos.viewmodelfactorycreator.ViewModelFactoryCreator</className>
+            <category>DI Helpers</category>
+        </intentionAction>
+    </extensions>
 
- <!--  TODO 12: Añadir una action al toolbar del IDE -->
- <actions>
-  <group
-          id="Version Catalog Migrator"
-          description="Version Catalog Migrator">
-   <!--  TODO 13: Detalles del action que estamos añadiendo al toolbar -->
-   <action
-           id="com.mena97villalobos.versioncatalogmigrator.MigratorAction"
-           class="com.mena97villalobos.viewmodelfactorycreator.MigratorAction"
-           text="Version Catalog Migrator"
-           description="Version Catalog Migrator"/>
-   <!--  TODO 14: Donde vamos a ubicar el action https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action__add-to-group -->
-   <add-to-group group-id="ToolsMenu" anchor="first"/>
-  </group>
- </actions>
+    <!--  TODO 12: Añadir una action al toolbar del IDE -->
+    <actions>
+        <group
+                id="Version Catalog Migrator"
+                description="Version Catalog Migrator">
+            <!--  TODO 13: Detalles del action que estamos añadiendo al toolbar -->
+            <action
+                    id="com.mena97villalobos.versioncatalogmigrator.MigratorAction"
+                    class="com.mena97villalobos.viewmodelfactorycreator.MigratorAction"
+                    text="Version Catalog Migrator"
+                    description="Version Catalog Migrator"/>
+            <!--  TODO 14: Donde vamos a ubicar el action https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html#idea-plugin__actions__action__add-to-group -->
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </group>
+    </actions>
 </idea-plugin>

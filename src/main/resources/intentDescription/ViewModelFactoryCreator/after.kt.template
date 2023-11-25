@@ -1,0 +1,12 @@
+class XViewModel(private val dependency: Any) : ViewModel() {
+    ...
+}
+
+@Suppress("UNCHECKED_CAST")
+class XViewModelFactory(private val dependency: Any) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(XViewModel::class.java))
+            return XViewModel(dependency) as T
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}

@@ -1,0 +1,3 @@
+class XViewModel(private val dependency: Any) : ViewModel() {
+    ...
+}
